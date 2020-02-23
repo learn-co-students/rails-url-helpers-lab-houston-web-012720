@@ -6,7 +6,14 @@ class StudentsController < ApplicationController
   end
 
   def show
+    set_student
   end
+  def activate
+    set_student
+    @student.activateme
+    redirect_to student_url(@student)
+  end
+
 
   private
 
