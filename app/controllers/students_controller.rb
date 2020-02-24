@@ -6,6 +6,14 @@ class StudentsController < ApplicationController
   end
 
   def show
+    set_student
+  end
+
+  def active
+    set_student
+    @student.toggle_active
+    # redirect_to student_path(@student)
+    redirect_to this_kid_path(@student)
   end
 
   private
